@@ -1,0 +1,160 @@
+apply plugin: 'com.android.application'
+//添加 com.sensorsdata.analytics.android 插件
+apply plugin: 'com.sensorsdata.analytics.android'
+
+android {
+    compileSdkVersion 28
+
+    signingConfigs {
+        release {
+            keyAlias DEBUG_KEY_ALIAS
+            keyPassword DEBUG_KEY_PASSWORD
+            storeFile file('../debug.keystore')
+            storePassword DEBUG_KEYSTORE_PASSWORD
+        }
+        debug {
+            keyAlias DEBUG_KEY_ALIAS
+            keyPassword DEBUG_KEY_PASSWORD
+            storeFile file('../debug.keystore')
+            storePassword DEBUG_KEYSTORE_PASSWORD
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.sensorsdata.analytics.android.test"
+//        minSdkVersion 17
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        //兼容x5内核的64位以32位运行
+        ndk {
+            abiFilters 'armeabi-v7a', 'x86', 'arm64-v8a', 'x86_64', 'armeabi'
+        }
+        packagingOptions {
+            doNotStrip "*/armeabi-v7a/*.so"
+            doNotStrip "*/x86/*.so"
+            doNotStrip "*/arm64-v8a/*.so"
+            doNotStrip "*/x86_64/*.so"
+            doNotStrip "armeabi.so"
+        }
+        signingConfig signingConfigs.release
+        proguardFiles 'proguard-rules.pro'
+    }
+    //插件相关配置
+    sensorsAnalytics {
+//        autoHandleWebView = false
+        //useInclude = true //白名单
+//        exclude = ['com.sensorsdata.analytics.android.test.activity.ElementActivity'] //黑名单配置
+//        disableJar = true  //不对第三方jar hook
+        debug=true //开启 debug 日志
+//        lambdaEnabled = false //开启lambda
+//        lambdaParamOptimize=true
+//        addUCJavaScriptInterface=true
+//        disableTrackPush=true
+//        disableTrackKeyboard=false
+//         disableModules=['WEB_VIEW','AUTOTRACK','PUSH']
+//        disableModules=['PUSH']
+        sdk {
+//            disableIMEI = true//禁止获取imei
+//            disableMacAddress = true  //禁止获取mac地址
+//            disableAndroidID = true  //禁止获取 androidID
+//            disableJsInterface = true  //禁止JS注入
+//            disableCarrier =true  //禁止获取运营商信息
+//            disableLog = true  //禁止 SDK 打印日志
+//            disableOAID=true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.debug
+
+            resValue("string", "PORT_NUMBER", "8089")
+        }
+    }
+//使用jdk8
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    //处理28与27混合导致版本不一致的缺陷
+    configurations.all {
+        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+            def requested = details.requested
+            if (requested.group == 'com.android.support') {
+                if (!requested.name.startsWith("multidex")) {
+                    details.useVersion '27.1.1'
+                }
+            }
+        }
+    }
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'android.arch.navigation:navigation-fragment:1.0.0'
+    implementation 'android.arch.navigation:navigation-ui:1.0.0'
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //方法数超过上限
+    implementation 'com.android.support:multidex:1.0.3'
+    //添加 Sensors Analytics SDK 依赖
+    implementation 'com.sensorsdata.analytics.android:SensorsAnalyticsSDK:6.6.9'
+//    implementation ('com.sensorsdata.analytics.android:SensorsAnalyticsSDK:6.6.8') {
+//         exclude(group:'com.sensorsdata.analytics.android', module:'push')
+//    }
+//    implementation files('libs/SensorsAnalyticsSDK-6.6.6-test1.aar')
+//    implementation 'com.sensorsdata.analytics.android:SensorsAnalyticsSDK:6.6.2'
+//    implementation 'com.sensorsdata.analytics.android:SensorsAnalyticsSDK-Beta:6.3.0'
+//    implementation 'com.sensorsdata.analytics.android:SensorsAnalyticsSDK-TV:6.0.3-tv'
+    //添加敏感权限申请依赖
+    implementation 'pub.devrel:easypermissions:2.0.1'
+    // v1.0.22/v1.0.23 支持最低版本 SDK 为 21
+    implementation files('libs/oaid_sdk_1.0.25.aar')
+//    implementation files('libs/RiskControlSDK-v1.0.5.aar')
+    //beta版测试
+//    implementation 'com.sensorsdata.analytics.android:SensorsAnalyticsSDK-Beta:4.1.0-beta'
+//    implementation files('libs/SensorsAnalyticsSDK-6.3.1-test1.aar')
+//    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.4'
+    //弹窗SDK
+    implementation 'com.sensorsdata.analytics.android:SensorsFocusSDK:0.5.1'
+//    implementation files('libs/SensorsFocusSDK-0.4.8-build2.aar')
+    // A/B Testing SDK
+//    implementation files('libs/SensorsABTestSDK-0.2.0-build2.aar')
+    implementation 'com.sensorsdata.analytics.abtesting:SensorsABTesting:0.2.1'
+    implementation files('libs/dialogJar.jar')
+    implementation files('libs/tbs_sdk.jar')
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    //流行的第三方WebView类库AgentWebX5
+    implementation 'com.just.agentweb:agentweb:4.1.3'
+    //插件兼容性测试的一个第三方jar,代码中并未使用该jar,如果无法编译或报错,请注释该jar
+//    implementation files('libs/kotlin-noarg-1.3.60.jar')
+    //json串处理的类库
+    implementation 'com.alibaba:fastjson:1.2.68'
+    //ec加密算法库
+//    implementation 'com.sensorsdata.provider:SensorsAnalyticsProvider:0.0.3'
+    //数据库数据在线调试工具
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
+    //自定义 dialog,最低版本要求 17
+    implementation 'com.kongzue.dialog_v3:dialog:3.2.4'
+    //集成魅族推送
+    implementation 'com.meizu.flyme.internet:push-internal:4.0.4'
+    //网络请求
+    implementation 'com.android.volley:volley:1.2.1'
+    // eventbus
+    implementation 'org.greenrobot:eventbus:3.0.0'
+
+}

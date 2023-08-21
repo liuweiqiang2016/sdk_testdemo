@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    >
+
+    <Button
+        android:id="@+id/top_setting"
+        android:layout_width="70dp"
+        android:layout_height="match_parent"
+        android:drawablePadding="6dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:paddingLeft="5dp"
+        android:singleLine="true"
+        android:text="设置"
+        android:textColor="#ffffffff"
+        android:textSize="18dp"
+        android:visibility="visible"
+        android:layout_alignParentLeft="true"/>
+
+    <TextView
+        android:id="@+id/top_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="标题"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_centerInParent="true"/>
+
+    <Button
+        android:id="@+id/top_scan"
+        android:layout_width="70dp"
+        android:layout_height="match_parent"
+        android:drawablePadding="6dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:paddingLeft="5dp"
+        android:singleLine="true"
+        android:text="扫描"
+        android:textSize="18dp"
+        android:visibility="visible"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout >

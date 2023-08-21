@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbars="vertical"
+    android:fadingEdge="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Switch
+        android:id="@+id/sw_permission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="是否允许采集隐私信息"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:id="@+id/btn_enableLog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="开启调试日志"/>
+
+        <Button
+            android:id="@+id/btn_disenableLog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="关闭调试日志"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_appcrash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="开启crash采集"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/btn_crash1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="崩溃1"/>
+
+        <Button
+            android:id="@+id/btn_crash2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="崩溃2"/>
+        <Button
+            android:id="@+id/btn_crash3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="崩溃3"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/btn_enableOrientation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="开启屏幕方向"/>
+
+        <Button
+            android:id="@+id/btn_disableOrientation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="关闭屏幕方向"/>
+
+        <Button
+            android:id="@+id/btn_stopOrientation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="停止屏幕方向采集"/>
+        <Button
+            android:id="@+id/btn_resumeOrientation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="恢复屏幕方向采集"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/btn_mainprocess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="获取主进程名"/>
+
+        <TextView
+            android:id="@+id/tv_mainprocess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="显示获取的主进程名"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/btn_getOrientation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="获取屏幕方向："/>
+
+        <TextView
+            android:id="@+id/tv_Orientation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="显示获取的当前用户的屏幕方向"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/btn_isDebug"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="是否开启Debug模式"/>
+
+        <TextView
+            android:id="@+id/tv_isDebug"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="显示是否开启了debug模式"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/btn_clearLastScreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="清除LSU"/>
+
+
+        <Button
+            android:id="@+id/btn_getLastScreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="获取LSU"/>
+
+        <TextView
+            android:id="@+id/tv_getLastScreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="获取LastScreenUrl"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/btn_getLSUproperty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="获取LSU的属性"/>
+
+        <TextView
+            android:id="@+id/tv_getLSUproperty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="获取LastScreenUrl事件的属性"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal"
+        >
+
+        <EditText
+            android:id="@+id/et_setlatitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:hint="填写经度"/>
+
+        <EditText
+            android:id="@+id/et_setlongitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:hint="填写纬度"/>
+
+        <Button
+            android:id="@+id/btn_setGPS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="设置经纬度"/>
+
+        <Button
+            android:id="@+id/btn_clearGPS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="清除经纬度"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:background="@drawable/testbord"
+        >
+
+        <Spinner
+            android:id="@+id/spinner_serverurl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:spinnerMode="dropdown"/>
+
+        <Button
+            android:id="@+id/btn_setserverUrl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="设置serverurl"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/btn_setSSL_der"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="设置der自签证书"/>
+
+        <Button
+            android:id="@+id/btn_setSSL_bks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="设置bks自签证书"/>
+
+        <Button
+            android:id="@+id/btn_unsetSSL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="取消自签证书"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <EditText
+            android:id="@+id/et_setCookie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:hint="填写cookie信息"/>
+
+        <Button
+            android:id="@+id/btn_setCookie_true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="设置cookie(T)"/>
+
+        <Button
+            android:id="@+id/btn_setCookie_false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="设置cookie(F)"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/btn_getCookie_ture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="获取cookie(T)"/>
+        <Button
+            android:id="@+id/btn_getCookie_false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="获取cookie(F)"/>
+
+        <TextView
+            android:id="@+id/tv_getCookie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="获取已设置的cookie"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <EditText
+            android:id="@+id/et_eventName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:hint="事件"
+            android:text="AppInstall"/>
+
+        <Button
+            android:id="@+id/btn_trackinstall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="渠道"/>
+        <Button
+            android:id="@+id/btn_trackinstall_properties"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="渠道(P)"/>
+        <Button
+            android:id="@+id/btn_trackinstall_gaid"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="渠道(gaid)"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <Spinner
+            android:id="@+id/spinner_oaid"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2" />
+
+        <Button
+            android:id="@+id/btn_trackinstall_oaid"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="渠道(oaid)"
+            />
+        <Button
+            android:id="@+id/btn_trackchannel_event_oaid"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="线索事件 oaid"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/btn_trackinstall_callback_true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="渠道(T)"/>
+
+        <Button
+            android:id="@+id/btn_trackinstall_callback_false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="渠道(F)"/>
+
+        <Button
+            android:id="@+id/btn_trackchannel_event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="线索事件"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/btn_tracksignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="tracksignup"/>
+
+        <Button
+            android:id="@+id/btn_tracksignUp_properties"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="tracksignup(P)"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/btn_open_callback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="开启callback"/>
+
+        <Button
+            android:id="@+id/btn_close_callback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="关闭callback"/>
+
+    </LinearLayout>
+
+</LinearLayout>
+</ScrollView>

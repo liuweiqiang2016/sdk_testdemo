@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbars="vertical"
+    android:fadingEdge="vertical">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/liner2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_getAnonymousId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="获取匿名ID："></Button>
+
+        <TextView
+            android:id="@+id/tv_AnonymousId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="显示获取的当前用户的匿名ID"/>
+
+        <Button
+            android:id="@+id/btn_resetAnonymousId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="重置默认匿名ID"></Button>
+
+
+    </LinearLayout>>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_getLoginId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="获取loginId："></Button>
+
+        <TextView
+            android:id="@+id/tv_loginId"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="显示当前用户loginId"/>
+
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="用户logout"></Button>
+
+
+    </LinearLayout>>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_getdistinctId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="获取distinctId："></Button>
+
+        <TextView
+            android:id="@+id/tv_distinctId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="显示当前用户distinctId"/>
+
+    </LinearLayout>>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+
+        <EditText
+            android:id="@+id/et_setAnonymousId"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:hint="填写匿名ID的内容"/>
+
+
+        <Button
+            android:id="@+id/btn_setAnonymousId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="替换匿名ID"></Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+
+        <EditText
+            android:id="@+id/et_setLoginId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="填写LoginId"/>
+
+
+        <Button
+            android:id="@+id/btn_setLoginId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="设置LoginId"></Button>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_setLoginId_withproperty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="设置LoginId带属性Json"></Button>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+
+        <EditText
+            android:id="@+id/et_key"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scrollbars="vertical"
+            android:hint="key(String)"/>
+
+        <Spinner
+            android:id="@+id/spinner_valuetype"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:spinnerMode="dropdown"></Spinner>
+
+        <EditText
+            android:id="@+id/et_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scrollbars="vertical"
+            android:clickable="true"
+            android:inputType="textMultiLine"
+            android:hint="value"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+
+        <Button
+            android:id="@+id/btn_setprofile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="设置用户属性"></Button>
+
+
+        <Button
+            android:id="@+id/btn_unsetprofile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="删除某一属性"></Button>
+
+        <Button
+            android:id="@+id/btn_setonceprofile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="设置首次属性"></Button>
+
+        <Button
+            android:id="@+id/btn_increment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="int属性值累加"></Button>
+
+        <Button
+            android:id="@+id/btn_append"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="追加用户属性"></Button>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+
+        <Button
+            android:id="@+id/btn_addtojson"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="add to json"></Button>
+
+        <Button
+            android:id="@+id/btn_clearjson"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="clear json"></Button>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <Button
+            android:id="@+id/btn_addtomap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="add to map"></Button>
+
+        <Button
+            android:id="@+id/btn_clearmap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="clear map"></Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <Button
+            android:id="@+id/btn_setprofile_json"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="设置用户属性json"></Button>
+
+        <Button
+            android:id="@+id/btn_setonceprofile_json"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="设置首次属性json"></Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:background="@drawable/testbord">
+
+        <Button
+            android:id="@+id/btn_increment_map"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="int属性值累加map"></Button>
+
+        <Button
+            android:id="@+id/btn_append_set"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="追加属性set"></Button>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:background="@drawable/testbord">
+
+        <Button
+            android:id="@+id/btn_pushid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="保存推送ID都用户表"></Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <Button
+            android:id="@+id/btn_deleteprofile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="删除所有用户属性"></Button>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+
+
+        <TextView
+            android:id="@+id/tv_itemType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="itemType:"/>
+
+        <EditText
+            android:id="@+id/et_itemType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scrollbars="vertical"
+            android:clickable="true"
+            android:inputType="textMultiLine"
+            android:hint="itemType"/>
+
+        <TextView
+            android:id="@+id/tv_itemId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="itemId:"/>
+
+        <EditText
+            android:id="@+id/et_itemId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scrollbars="vertical"
+            android:clickable="true"
+            android:inputType="textMultiLine"
+            android:hint="itemId"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:background="@drawable/testbord">
+
+        <Button
+            android:id="@+id/btn_setitem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="设置item"></Button>
+
+        <Button
+            android:id="@+id/btn_deleteitem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="删除item"></Button>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_flushall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="上传本地所有数据"></Button>
+
+
+</LinearLayout>
+
+</ScrollView>

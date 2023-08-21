@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbars="vertical"
+    android:fadingEdge="vertical">
+
+
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.AutoTrackActivity">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+
+        <EditText
+            android:id="@+id/et_sessionTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="30000"/>
+
+
+        <Button
+            android:id="@+id/btn_setSessionTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="设置session时间(ms)"/>
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/btn_getSessionTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="获取当前session时间(ms)"/>
+
+
+        <TextView
+            android:id="@+id/tv_getSessionTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="当前session时间是？"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/spinner_activity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:spinnerMode="dropdown"/>
+
+
+        <Button
+            android:id="@+id/btn_ignore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="忽略该activity"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text=""/>
+
+
+        <Button
+            android:id="@+id/btn_resume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="恢复该activity"/>
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=""/>
+
+        <Button
+            android:id="@+id/btn_isAuto_viewScreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="该activity是否忽略浏览"/>
+
+
+        <TextView
+            android:id="@+id/tv_isAuto_viewScreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="浏览事件是否被忽略"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=""/>
+
+
+        <Button
+            android:id="@+id/btn_isAuto_appClick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="该activity是否忽略点击"/>
+
+
+        <TextView
+            android:id="@+id/tv_isAuto_appClick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="点击事件是否被忽略"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=""/>
+
+            <Button
+                android:id="@+id/btn_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ADD_to_list"/>
+
+            <Button
+                android:id="@+id/btn_delete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="remove"/>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_showlist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="选择的Activities的列表"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <Button
+            android:id="@+id/btn_ignoreList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="忽略选中的activities"/>
+
+
+        <Button
+            android:id="@+id/btn_resumeList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="恢复选中的activities"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/testbord">
+
+
+        <Button
+            android:id="@+id/btn_enableRN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="开启RN采集"/>
+
+
+        <Button
+            android:id="@+id/btn_is_RNenable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="RN是否采集"/>
+
+        <TextView
+            android:id="@+id/tv_showRN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RN是否开启"
+            android:layout_weight="1"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+</LinearLayout>
+</ScrollView>

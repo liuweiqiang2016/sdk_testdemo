@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/auto_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="选择eventNameList的方法："
+        android:textSize="20dp"/>
+
+
+    <Spinner
+        android:id="@+id/spinner_method"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_horizontal"
+        android:spinnerMode="dropdown"></Spinner>
+
+
+    <LinearLayout
+        android:id="@+id/Linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+
+        <CheckBox
+            android:id="@+id/aa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AppStart"
+            android:ellipsize="marquee"/>
+
+        <CheckBox
+            android:id="@+id/bb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AppClick"
+            android:ellipsize="marquee"/>
+
+        <CheckBox
+            android:id="@+id/cc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AppViewScreen"
+            android:ellipsize="marquee"/>
+
+        <CheckBox
+            android:id="@+id/dd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AppEnd"
+            android:ellipsize="marquee"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/liner2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_getAuto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="获取埋点事件："></Button>
+
+        <TextView
+            android:id="@+id/tv_getAuto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点击当前已开启的埋点事件"/>
+
+    </LinearLayout>>
+
+    <LinearLayout
+        android:id="@+id/liner3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_isAuto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全埋点标志位："></Button>
+
+        <TextView
+            android:id="@+id/tv_isAuto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="当前SDK是否开启了埋点"/>
+
+    </LinearLayout>>
+
+
+    <ListView
+        android:id="@+id/lv_auto"
+        android:layout_width="match_parent"
+        android:layout_height="212dp"></ListView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <Spinner
+            android:id="@+id/spinner_disable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:spinnerMode="dropdown"></Spinner>
+
+
+        <Button
+            android:id="@+id/btn_disable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="关闭某个事件"></Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/spinner_ingore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:spinnerMode="dropdown"></Spinner>
+
+        <Button
+            android:id="@+id/btn_ignore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="忽略某个事件"></Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/spinner_int"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:spinnerMode="dropdown"></Spinner>
+
+        <Button
+            android:id="@+id/btn_isAuto_int"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="某事件是否忽略"></Button>
+
+
+        <TextView
+            android:id="@+id/tv_isAuto_int"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="是否开启埋点"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/lambda_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="lambda(静)"></Button>
+
+        <Button
+            android:id="@+id/lambda_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="lambda(动)"></Button>
+
+        <Button
+            android:id="@+id/lambda_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="lambda(常规)"></Button>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/jar_plugin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="调第三方jar界面"></Button>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_jumpA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="跳转到Activity测试"></Button>
+
+        <Button
+            android:id="@+id/btn_clearRefer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="appEnd时清理referrer"></Button>
+
+        <Button
+            android:id="@+id/btn_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="异常测试"></Button>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+</ScrollView>

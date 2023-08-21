@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sensorsdata.analytics.android.test">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.HomeActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="ss.com"
+                    android:scheme="testdemo" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="sae4a03" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="sae2a12fd1" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="sa248f8488" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="sa70810333" />
+            </intent-filter>
+            <intent-filter>
+                <data
+                    android:host="sensorsdata"
+                    android:pathPrefix="/sd/wxL"
+                    android:scheme="deep22" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <data
+                    android:host="qudong01.datasink.sensorsdata.cn"
+                    android:pathPrefix="/sd/wxL"
+                    android:scheme="http" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <data
+                    android:host="qudong01.datasink.sensorsdata.cn"
+                    android:pathPrefix="/sd/wxL"
+                    android:scheme="https" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+
+            <intent-filter>
+                <data
+                    android:host="sensorsdata"
+                    android:pathPrefix="/slink/satdemo04-slink04"
+                    android:scheme="sadeeplink" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+
+            <intent-filter android:autoVerify="true">
+                <data
+                    android:host="satdemo04-slink04.debugbox.sensorsdata.cn"
+                    android:pathPrefix="/slink"
+                    android:scheme="http" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+
+            <intent-filter android:autoVerify="true">
+                <data
+                    android:host="satdemo04-slink04.debugbox.sensorsdata.cn"
+                    android:pathPrefix="/slink"
+                    android:scheme="https" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+
+
+        </activity>
+        <activity android:name=".activity.ViewActivity" />
+        <activity android:name=".activity.MyTabActivity" />
+        <activity android:name=".activity.TabLayoutActivity" />
+        <activity android:name=".activity.AutoTrackActivity" />
+        <activity
+            android:name=".activity.H5Activity"
+            android:launchMode="singleTask"
+            />
+        <activity
+            android:name=".activity.ElementActivity"
+            />
+
+        <activity
+            android:name=".activity.TVActivity"
+            />
+        <activity
+            android:name=".activity.DialogActivity"
+            android:label="自定义弹窗"
+            android:theme="@style/Theme.AppCompat.Light.Dialog" />
+        <activity
+            android:name=".activity.ViewClickActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.sensorsdata.analytics.android.sdk.dialog.SchemeActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="sa3d8a2022" />
+            </intent-filter>
+        </activity>
+        <service
+            android:name=".service.MyForegroundService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".service.MyService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".service.AssertService"
+            android:exported="false" />
+        <receiver
+            android:name=".receiver.AlertReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.MY_GEOFENCE" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".receiver.MyReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.MY_GEOFENCE" />
+            </intent-filter>
+        </receiver>
+        <!-- 日志最大条数及时间间隔的测试代码,由于代码中无法动态修改，执行测试用例时需手动打包，然后执行测试 -->
+        <meta-data
+            android:name="com.sensorsdata.analytics.android.FlushInterval"
+            android:value="4000" />
+        <meta-data
+            android:name="com.sensorsdata.analytics.android.FlushBulkSize"
+            android:value="10" />
+        <!-- 关闭老数据迁移 -->
+        <meta-data
+            android:name="com.sensorsdata.analytics.android.EnableMigratingDB"
+            android:value="true" />
+        <!-- 开启点击分析 -->
+        <meta-data
+            android:name="com.sensorsdata.analytics.android.HeatMap"
+            android:value="false" />
+        <!-- 开启可视化全埋点 -->
+        <meta-data
+            android:name="com.sensorsdata.analytics.android.VisualizedAutoTrack"
+            android:value="false" />
+        <!-- 是否采集 deviceId -->
+        <meta-data
+            android:name="com.sensorsdata.analytics.android.DisableTrackDeviceId"
+            android:value="false" />
+
+    </application>
+
+</manifest>

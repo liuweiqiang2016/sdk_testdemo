@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbars="vertical"
+    android:fadingEdge="vertical">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EventName："
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:textSize="15sp" />
+        <EditText
+            android:id="@+id/eventName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="yywang"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Start开始" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/sleep2s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="仅sleep2s" />
+
+        <Button
+            android:id="@+id/sleepAndEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="sleep2s后结束" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="结束" />
+
+        <Button
+            android:id="@+id/endWithProperties"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="结束带属性" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/pause"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="暂停"
+        />
+
+    <Button
+        android:id="@+id/resume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="恢复"
+        />
+
+
+    <Button
+        android:id="@+id/remove"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="删除当前计时器" />
+
+    <Button
+        android:id="@+id/clear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="清除所有计时器" />
+    <Button
+        android:id="@+id/time_new"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试新版计时器" />
+
+    <Button
+        android:id="@+id/beginJump"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Begin/trackTimer跳转" />
+
+</LinearLayout>
+
+</ScrollView>

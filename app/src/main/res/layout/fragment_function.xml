@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_fun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:layout_margin="10dp"
+        android:layout_gravity="center_horizontal"
+        />
+    <WebView
+        android:id="@+id/wv_fun"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_margin="10dp"
+        />
+
+    <com.sensorsdata.analytics.android.test.view.X5WebView
+        android:id="@+id/x5_fun"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_margin="10dp"
+        />
+
+
+</LinearLayout>

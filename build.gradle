@@ -1,0 +1,46 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+
+    repositories {
+//        maven{url '/Users/weiqiangliu/AndroidStudioProjects/sdk_testdemo/repo75'}
+
+        //google()
+        mavenCentral()
+        mavenLocal()
+        maven { url 'https://maven.google.com/'}
+        maven { url "https://maven.aliyun.com/repository/jcenter" }
+//        maven{url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        //插件测试
+//        maven{url 'maven'}
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.0.0'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+
+        //添加神策分析 android-gradle-plugin 依赖,测试本地插件时，需要修改成本地插件版本号
+//        classpath 'com.sensorsdata.analytics.android:android-gradle-plugin2:4.0.0-beta'
+        classpath 'com.sensorsdata.analytics.android:android-gradle-plugin2:3.5.4'
+//        classpath 'com.sensorsdata.analytics.android:android-gradle-plugin2:3.3.4.100'
+    }
+}
+
+allprojects {
+    repositories {
+//        maven{url '/Users/weiqiangliu/AndroidStudioProjects/sdk_testdemo/repo75'}
+
+        //google()
+        mavenCentral()
+        mavenLocal()
+        maven { url 'https://maven.google.com/'}
+        maven { url "https://maven.aliyun.com/repository/jcenter" }
+//        maven{url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+//        maven{url '/Users/weiqiangliu/AndroidStudioProjects/sa-android-test/repo'}
+
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
