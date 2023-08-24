@@ -9,13 +9,13 @@ android {
         release {
             keyAlias DEBUG_KEY_ALIAS
             keyPassword DEBUG_KEY_PASSWORD
-            storeFile file('../debug.keystore')
+            storeFile file('/Users/liuweiqiang/AndroidSpace/sdk_testdemo/debug.keystore')
             storePassword DEBUG_KEYSTORE_PASSWORD
         }
         debug {
             keyAlias DEBUG_KEY_ALIAS
             keyPassword DEBUG_KEY_PASSWORD
-            storeFile file('../debug.keystore')
+            storeFile file('/Users/liuweiqiang/AndroidSpace/sdk_testdemo/debug.keystore')
             storePassword DEBUG_KEYSTORE_PASSWORD
         }
     }
@@ -84,6 +84,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    buildToolsVersion '29.0.2'
 }
 
 dependencies {
